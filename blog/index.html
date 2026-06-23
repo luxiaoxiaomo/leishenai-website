@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>博客 - 雷神</title>
+  <meta name="description" content="雷神的博客：AI × HR 实践笔记">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Noto+Serif+SC:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/vars.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/nav.css">
+  <style>
+    .page-header {
+      padding-top: var(--space-8);
+      padding-bottom: var(--space-6);
+      text-align: center;
+    }
+
+    .page-header p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    /* 博客列表 */
+    .blog-section {
+      padding-bottom: var(--space-12);
+    }
+
+    .blog-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .month-group {
+      margin-bottom: var(--space-6);
+    }
+
+    .month-header {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: var(--space-3);
+      padding-bottom: var(--space-1);
+      border-bottom: 1px solid var(--hair);
+    }
+
+    .post-item {
+      background: var(--elevated);
+      border: 1px solid var(--hair);
+      border-radius: var(--radius-card);
+      padding: var(--space-4);
+      margin-bottom: var(--space-3);
+      transition: all 0.2s;
+    }
+
+    .post-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .post-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: var(--space-2);
+      gap: var(--space-2);
+    }
+
+    .post-item h3 {
+      font-size: 20px;
+      margin-bottom: 0;
+    }
+
+    .post-date {
+      font-size: 13px;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      white-space: nowrap;
+    }
+
+    .post-summary {
+      font-size: 15px;
+      color: var(--ink-2);
+      line-height: 1.6;
+      margin-bottom: var(--space-2);
+    }
+
+    .post-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    .post-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .post-tag {
+      font-size: 12px;
+      padding: 3px 8px;
+      background: var(--subtle);
+      color: var(--muted);
+      border-radius: 4px;
+    }
+
+    .post-link {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent-ink);
+    }
+
+    .post-link:hover {
+      color: var(--accent);
+    }
+
+    /* 占位提示 */
+    .placeholder {
+      text-align: center;
+      padding: var(--space-8) var(--space-3);
+      color: var(--muted);
+      background: var(--subtle);
+      border-radius: var(--radius-card);
+    }
+
+    .placeholder p {
+      font-size: 16px;
+      margin-bottom: var(--space-2);
+    }
+
+    @media (max-width: 768px) {
+      .post-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .post-date {
+        margin-bottom: var(--space-1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="../index.html" class="topnav-brand">雷神</a>
+      <div class="topnav-links">
+        <a href="../index.html">首页</a>
+        <a href="../about.html">关于</a>
+        <a href="../projects.html">AI项目</a>
+        <a href="../portfolio.html">作品集</a>
+        <a href="../blog/index.html">博客</a>
+        <a href="../news.html">报道</a>
+        <a href="../speaking.html">讲课</a>
+      </div>
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 页面头部 -->
+  <div class="page-header">
+    <div class="container">
+      <h1>博客</h1>
+      <p>AI × HR 实践笔记，不定期更新</p>
+    </div>
+  </div>
+
+  <!-- 博客列表 -->
+  <section class="blog-section">
+    <div class="container">
+      <div class="blog-list" id="blogList">
+        <!-- 动态加载 -->
+        <div class="placeholder">
+          <p>📝 内容整理中</p>
+          <p style="font-size: 14px;">博客文章将陆续发布，敬请期待</p>
+          <p style="font-size: 14px;">部分实践内容已在公众号分享，可前往 <a href="../speaking.html">讲课页面</a> 关注</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // 导航菜单
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.topnav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // 加载博客列表（当有文章时）
+    // fetch('../data/posts.json')
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     if (data.posts.length === 0) return;
+    //
+    //     const container = document.getElementById('blogList');
+    //     container.innerHTML = ''; // 清空占位
+    //
+    //     // 按月份分组
+    //     const byMonth = {};
+    //     data.posts.forEach(post => {
+    //       const month = post.date.substring(0, 7);
+    //       if (!byMonth[month]) byMonth[month] = [];
+    //       byMonth[month].push(post);
+    //     });
+    //
+    //     Object.keys(byMonth).sort().reverse().forEach(month => {
+    //       const group = document.createElement('div');
+    //       group.className = 'month-group';
+    //       group.innerHTML = `<div class="month-header">${month}</div>`;
+    //
+    //       byMonth[month].forEach(post => {
+    //         const item = document.createElement('div');
+    //         item.className = 'post-item';
+    //         item.innerHTML = `
+    //           <div class="post-header">
+    //             <h3>${post.title}</h3>
+    //             <div class="post-date">${post.date}</div>
+    //           </div>
+    //           <div class="post-summary">${post.summary}</div>
+    //           <div class="post-footer">
+    //             <div class="post-tags">
+    //               ${post.tags.map(tag => `<span class="post-tag">${tag}</span>`).join('')}
+    //             </div>
+    //             <a href="${post.file}" class="post-link">阅读全文 →</a>
+    //           </div>
+    //         `;
+    //         group.appendChild(item);
+    //       });
+    //
+    //       container.appendChild(group);
+    //     });
+    //   });
+  </script>
+</body>
+</html>

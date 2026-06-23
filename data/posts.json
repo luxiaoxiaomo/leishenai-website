@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "posts": [
+    {
+      "id": "example-post",
+      "title": "示例文章：AI 原生组织的思考",
+      "date": "2025-06-01",
+      "tags": ["AI治理", "组织设计"],
+      "summary": "这是一篇示例文章，演示博客系统的基本功能。实际内容将在后续添加。",
+      "file": "posts/example-post.html"
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于 - 雷神</title>
+  <meta name="description" content="雷神的个人简介：从 HR Tech 到 AI Agent 实践者">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Noto+Serif+SC:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/vars.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <style>
+    .page-header {
+      padding-top: var(--space-8);
+      padding-bottom: var(--space-6);
+      text-align: center;
+    }
+
+    /* 简介区 */
+    .intro-section {
+      padding-bottom: var(--space-8);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: var(--space-6);
+      align-items: start;
+    }
+
+    .intro-avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 15%;
+      box-shadow: 0 6px 24px -6px rgba(120, 80, 40, 0.3);
+    }
+
+    .intro-content h2 {
+      font-size: 32px;
+      margin-bottom: var(--space-3);
+    }
+
+    .intro-content p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--ink-2);
+      margin-bottom: var(--space-3);
+    }
+
+    .intro-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 时间线 */
+    .timeline-section {
+      padding-bottom: var(--space-8);
+    }
+
+    .timeline-section h2 {
+      margin-bottom: var(--space-6);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: var(--space-6);
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--hair);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: var(--space-4);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -31px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--paper);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+
+    .timeline-year {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent-ink);
+      margin-bottom: 4px;
+    }
+
+    .timeline-content {
+      font-size: 16px;
+      color: var(--ink-2);
+      line-height: 1.6;
+    }
+
+    /* 技能标签 */
+    .skills-section {
+      padding-bottom: var(--space-12);
+    }
+
+    .skills-section h2 {
+      margin-bottom: var(--space-4);
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    .skill-tag {
+      font-size: 15px;
+      font-weight: 500;
+      padding: 10px 20px;
+      background: var(--elevated);
+      border: 1px solid var(--hair);
+      border-radius: 8px;
+      color: var(--ink-2);
+      transition: all 0.2s;
+    }
+
+    .skill-tag:hover {
+      border-color: var(--accent);
+      color: var(--accent-ink);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-card);
+    }
+
+    @media (max-width: 768px) {
+      .intro-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .intro-avatar {
+        margin: 0 auto;
+      }
+
+      .timeline {
+        padding-left: var(--space-4);
+      }
+
+      .timeline-item::before {
+        left: -25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="index.html" class="topnav-brand">雷神</a>
+      <div class="topnav-links">
+        <a href="index.html">首页</a>
+        <a href="about.html" class="active">关于</a>
+        <a href="projects.html">AI项目</a>
+        <a href="portfolio.html">作品集</a>
+        <a href="blog/index.html">博客</a>
+        <a href="news.html">报道</a>
+        <a href="speaking.html">讲课</a>
+      </div>
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 页面头部 -->
+  <div class="page-header">
+    <div class="container">
+      <h1>关于我</h1>
+    </div>
+  </div>
+
+  <!-- 简介 -->
+  <section class="intro-section">
+    <div class="container">
+      <div class="intro-grid">
+        <img src="assets/img/头像.jpg" alt="雷神" class="intro-avatar">
+        <div class="intro-content">
+          <h2 class="serif">从 HR Tech 到 AI，不是转行，是升维</h2>
+          <p>我是雷神，在 HR Tech 领域深耕 15 年后，开始用 AI 重新定义组织与人的连接方式。</p>
+          <p>不是抛弃 HR Tech 经验去追 AI 热点，而是发现：懂 HR 系统、懂组织流程、懂业务场景的人，恰恰最有机会把 AI 真正落地进企业。技术能学，但对 HR Tech 痛点的理解和对场景的洞察，是 15 年才能积累的壁垒。</p>
+          <p>现在践行 OPC（One Person Company）模式：我负责判断和决策，AI Agent 团队负责执行。从知识治理到数据治理，从 HR AI Agent 到企业 AI 成熟度评测，每个项目都是"AI × HR"交叉领域的实验场。</p>
+          <p>我相信，AI 原生组织不是科幻，而是可以用五层治理体系一步步搭建起来的现实。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 时间线 -->
+  <section class="timeline-section">
+    <div class="container">
+      <h2>时间线</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2009</div>
+          <div class="timeline-content">进入 HR Tech 领域，从基础 HR 系统实施做起</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2015</div>
+          <div class="timeline-content">深度参与 HR 系统架构设计与流程优化，积累技术与业务双重视角</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2020</div>
+          <div class="timeline-content">开始研究 AI 在 HR Tech 场景的应用可能性</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-content">决定 All-in AI，启动 OPC 模式实践</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2024</div>
+          <div class="timeline-content">带 AI Agent 团队落地多个项目，验证"1 人 + AI 团队"可行性</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-content">构建 AI 原生组织五层治理框架，推进知识治理与数据治理落地</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技能/领域 -->
+  <section class="skills-section">
+    <div class="container">
+      <h2>技能 / 领域</h2>
+      <div class="skills-grid">
+        <div class="skill-tag">AI Agent</div>
+        <div class="skill-tag">知识治理</div>
+        <div class="skill-tag">数据治理</div>
+        <div class="skill-tag">HR Tech</div>
+        <div class="skill-tag">组织设计</div>
+        <div class="skill-tag">OPC 实践</div>
+        <div class="skill-tag">桌面应用</div>
+        <div class="skill-tag">RAG</div>
+        <div class="skill-tag">MCP</div>
+        <div class="skill-tag">AI 落地咨询</div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // 导航菜单
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.topnav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 项目 - 雷神</title>
+  <meta name="description" content="雷神的 AI Agent 项目展示：知识治理、数据治理、HR AI Agent">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Noto+Serif+SC:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/vars.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <style>
+    .page-header {
+      padding-top: var(--space-8);
+      padding-bottom: var(--space-4);
+      text-align: center;
+    }
+
+    .page-header h1 {
+      margin-bottom: var(--space-2);
+    }
+
+    .page-header p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .projects-section {
+      padding-bottom: var(--space-12);
+    }
+
+    .projects-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .project-card {
+      background: var(--elevated);
+      border: 1px solid var(--hair);
+      border-radius: var(--radius-card);
+      padding: var(--space-3);
+      box-shadow: var(--shadow-card);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--hair);
+      transition: background 0.2s;
+    }
+
+    .project-card:hover::before {
+      background: var(--accent);
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .project-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: var(--space-2);
+      gap: var(--space-2);
+    }
+
+    .project-card h3 {
+      font-size: 20px;
+      margin-bottom: 0;
+      line-height: 1.3;
+      font-weight: 600;
+    }
+
+    .project-card-summary {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: var(--space-2);
+      line-height: 1.6;
+    }
+
+    .project-card-description {
+      font-size: 14px;
+      color: var(--ink-2);
+      line-height: 1.7;
+      margin-bottom: var(--space-3);
+      flex-grow: 1;
+    }
+
+    .project-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-top: var(--space-2);
+      border-top: 1px solid var(--hair);
+    }
+
+    .project-tag {
+      font-size: 12px;
+      padding: 3px 10px;
+      background: var(--subtle);
+      color: var(--muted);
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .projects-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="index.html" class="topnav-brand">雷神</a>
+      <div class="topnav-links">
+        <a href="index.html">首页</a>
+        <a href="about.html">关于</a>
+        <a href="projects.html" class="active">AI项目</a>
+        <a href="portfolio.html">作品集</a>
+        <a href="blog/index.html">博客</a>
+        <a href="news.html">报道</a>
+        <a href="speaking.html">讲课</a>
+      </div>
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 页面头部 -->
+  <div class="page-header">
+    <div class="container">
+      <h1>AI 项目</h1>
+      <p>从理论框架到落地实践，构建 AI 原生组织</p>
+    </div>
+  </div>
+
+  <!-- 项目列表 -->
+  <section class="projects-section">
+    <div class="container">
+      <div class="projects-list" id="projectsList">
+        <!-- 动态加载 -->
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // 导航菜单
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.topnav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // 加载所有项目
+    fetch('data/projects.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('projectsList');
+
+        const statusText = {
+          'in_progress': '进行中',
+          'live': '已上线',
+          'done': '已完成',
+          'concept': '概念阶段'
+        };
+
+        data.projects.forEach(project => {
+          const card = document.createElement('div');
+          card.className = 'project-card';
+          card.innerHTML = `
+            <div class="project-card-header">
+              <h3>${project.name}</h3>
+              <span class="badge badge-${project.status}">${statusText[project.status]}</span>
+            </div>
+            <div class="project-card-summary">${project.summary}</div>
+            <div class="project-card-description">${project.description}</div>
+            <div class="project-card-tags">
+              ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      });
+  </script>
+</body>
+</html>

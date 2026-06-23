@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作品集 - 雷神</title>
+  <meta name="description" content="雷神的作品集：项目成果、演讲、文章">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Noto+Serif+SC:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/vars.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <style>
+    .page-header {
+      padding-top: var(--space-8);
+      padding-bottom: var(--space-6);
+      text-align: center;
+    }
+
+    .page-header p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    /* 作品分类 */
+    .portfolio-section {
+      padding-bottom: var(--space-12);
+    }
+
+    .category {
+      margin-bottom: var(--space-8);
+    }
+
+    .category h2 {
+      margin-bottom: var(--space-4);
+      padding-bottom: var(--space-2);
+      border-bottom: 2px solid var(--hair);
+    }
+
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .portfolio-item {
+      background: var(--elevated);
+      border: 1px solid var(--hair);
+      border-radius: var(--radius-card);
+      padding: var(--space-4);
+      box-shadow: var(--shadow-card);
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .portfolio-item h3 {
+      font-size: 20px;
+      margin-bottom: var(--space-2);
+    }
+
+    .portfolio-item-meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: var(--space-2);
+      font-family: var(--font-mono);
+    }
+
+    .portfolio-item-desc {
+      font-size: 15px;
+      color: var(--ink-2);
+      line-height: 1.6;
+      margin-bottom: var(--space-3);
+      flex-grow: 1;
+    }
+
+    .portfolio-item-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent-ink);
+    }
+
+    .portfolio-item-link:hover {
+      color: var(--accent);
+    }
+
+    /* 占位提示 */
+    .placeholder {
+      text-align: center;
+      padding: var(--space-8) var(--space-3);
+      color: var(--muted);
+    }
+
+    .placeholder p {
+      font-size: 16px;
+      margin-bottom: var(--space-2);
+    }
+
+    @media (max-width: 768px) {
+      .items-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="index.html" class="topnav-brand">雷神</a>
+      <div class="topnav-links">
+        <a href="index.html">首页</a>
+        <a href="about.html">关于</a>
+        <a href="projects.html">AI项目</a>
+        <a href="portfolio.html" class="active">作品集</a>
+        <a href="blog/index.html">博客</a>
+        <a href="news.html">报道</a>
+        <a href="speaking.html">讲课</a>
+      </div>
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 页面头部 -->
+  <div class="page-header">
+    <div class="container">
+      <h1>作品集</h1>
+      <p>项目成果、演讲分享、实践文章</p>
+    </div>
+  </div>
+
+  <!-- 作品内容 -->
+  <section class="portfolio-section">
+    <div class="container">
+
+      <!-- 项目成果 -->
+      <div class="category">
+        <h2>项目成果</h2>
+        <div class="items-grid">
+          <div class="portfolio-item">
+            <h3>AI 原生组织五层治理框架</h3>
+            <div class="portfolio-item-meta">2025 · 理论框架</div>
+            <div class="portfolio-item-desc">
+              构建从知识治理到组织治理的递进体系，解决 AI 进企业后的系统性问题。五层架构已在多个项目中验证可行性。
+            </div>
+            <a href="projects.html" class="portfolio-item-link">查看详情 →</a>
+          </div>
+
+          <div class="portfolio-item">
+            <h3>知识治理系统（最小闭环）</h3>
+            <div class="portfolio-item-meta">2025 · 落地项目</div>
+            <div class="portfolio-item-desc">
+              基于知识原子的元模型，病假工资场景完整跑通。包含版本管理、时效性控制、逐字引用校验。
+            </div>
+            <a href="projects.html" class="portfolio-item-link">查看详情 →</a>
+          </div>
+
+          <div class="portfolio-item">
+            <h3>问查办一体化 HR AI Agent</h3>
+            <div class="portfolio-item-meta">2024 · 4周 MVP</div>
+            <div class="portfolio-item-desc">
+              验证 OPC 模式（1 人 + AI Agent 团队）的可行性。4 周内完成 MVP，问答准确率 ≥ 80%，意图分类 ≥ 90%。
+            </div>
+            <a href="projects.html" class="portfolio-item-link">查看详情 →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 演讲分享 -->
+      <div class="category">
+        <h2>演讲分享</h2>
+        <div class="placeholder">
+          <p>演讲内容整理中，敬请期待</p>
+          <p style="font-size: 14px;">如需邀请讲课，请访问 <a href="speaking.html">讲课页面</a></p>
+        </div>
+      </div>
+
+      <!-- 文章 -->
+      <div class="category">
+        <h2>实践文章</h2>
+        <div class="placeholder">
+          <p>文章内容整理中，敬请期待</p>
+          <p style="font-size: 14px;">部分内容已在公众号发布，可前往 <a href="speaking.html">讲课页面</a> 关注</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // 导航菜单
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.topnav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

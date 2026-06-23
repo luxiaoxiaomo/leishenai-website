@@ -1,0 +1,58 @@
+/* 参考 AhaDiff 暖色纸质风格 */
+:root {
+  /* 背景 - 温暖纸质感 */
+  --paper: #FAF8F2;
+  --subtle: #F2EFE7;
+  --elevated: #FFFFFF;
+
+  /* 文字 */
+  --ink: #1C1B18;
+  --ink-2: #38362F;
+  --muted: #6A6456;
+  --muted-2: #8F8878;
+
+  /* 边框与分隔 */
+  --hair: #E6E3D8;
+
+  /* 强调色 - 暖橙棕 */
+  --accent: #D27050;
+  --accent-ink: #B04E28;
+  --accent-soft: #F4E4D9;
+
+  /* 状态色 */
+  --success: #2F6F4F;
+  --warning: #B4791F;
+  --add-bg: #E4EFE0;
+  --add-fg: #2F6F4F;
+  --del-bg: #F6DCD5;
+  --del-fg: #A33D2B;
+
+  /* 徽章背景 */
+  --badge-in-progress-bg: rgba(210, 112, 80, 0.12);
+  --badge-live-bg: rgba(47, 111, 79, 0.12);
+  --badge-done-bg: rgba(143, 136, 120, 0.12);
+  --badge-concept-bg: rgba(180, 121, 31, 0.12);
+
+  /* 卡片 */
+  --radius-card: 12px;
+  --shadow-card: 0 2px 12px -4px rgba(120, 80, 40, 0.15);
+  --shadow-hover: 0 6px 24px -6px rgba(120, 80, 40, 0.2);
+
+  /* 字体 */
+  --font-serif: 'Newsreader', 'Noto Serif SC', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+
+  /* 间距 */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-12: 96px;
+
+  /* 内容宽度 */
+  --max-width: 960px;
+  --nav-height: 56px;
+}

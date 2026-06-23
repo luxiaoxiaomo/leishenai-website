@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雷神 - OPC 践行者 · AI Agent 实践者</title>
+  <meta name="description" content="OPC 践行者，15 年 HR Tech 背景，带 AI Agent 团队落地 AI 原生企业">
+  <meta name="theme-color" content="#FAF8F2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Noto+Serif+SC:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/vars.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <style>
+    /* Hero Section */
+    .hero {
+      padding-top: 80px;
+      padding-bottom: 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-avatar {
+      margin: 0 auto var(--space-3);
+    }
+
+    .hero h1 {
+      margin-bottom: var(--space-1);
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: var(--space-2);
+    }
+
+    .hero-slogan {
+      font-family: var(--font-serif);
+      font-size: clamp(18px, 2.5vw, 24px);
+      font-style: italic;
+      color: var(--accent-ink);
+      margin-bottom: var(--space-4);
+      font-weight: 500;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: var(--space-6);
+    }
+
+    /* 身份标签条 */
+    .identity-tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: var(--space-8);
+      padding: 0 var(--space-3);
+    }
+
+    .identity-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 16px;
+      background: var(--elevated);
+      border: 1px solid var(--hair);
+      border-radius: 8px;
+      color: var(--ink-2);
+    }
+
+    /* 精选项目 */
+    .featured-projects {
+      padding-bottom: var(--space-8);
+    }
+
+    .featured-projects h2 {
+      text-align: center;
+      margin-bottom: var(--space-6);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+
+    .project-card {
+      background: var(--elevated);
+      border: 1px solid var(--hair);
+      border-radius: var(--radius-card);
+      padding: var(--space-3);
+      box-shadow: var(--shadow-card);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .project-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: var(--space-2);
+    }
+
+    .project-card h3 {
+      font-size: 20px;
+      margin-bottom: 0;
+      color: var(--ink);
+    }
+
+    .project-card-summary {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: var(--space-2);
+      line-height: 1.6;
+    }
+
+    .project-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+    }
+
+    .project-tag {
+      font-size: 12px;
+      padding: 3px 8px;
+      background: var(--subtle);
+      color: var(--muted);
+      border-radius: 4px;
+    }
+
+    .view-all {
+      text-align: center;
+    }
+
+    .view-all a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+
+      .identity-tags {
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="index.html" class="topnav-brand">雷神</a>
+      <div class="topnav-links">
+        <a href="index.html" class="active">首页</a>
+        <a href="about.html">关于</a>
+        <a href="projects.html">AI项目</a>
+        <a href="portfolio.html">作品集</a>
+        <a href="blog/index.html">博客</a>
+        <a href="news.html">报道</a>
+        <a href="speaking.html">讲课</a>
+      </div>
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-content">
+      <img src="assets/img/头像.jpg" alt="雷神" class="avatar hero-avatar">
+      <h1>雷神</h1>
+      <div class="hero-subtitle">OPC 践行者 · AI Agent 实践者 · HR Tech 出身</div>
+      <div class="hero-slogan">"用 15 年组织经验，落地 AI 原生企业"</div>
+      <div class="hero-ctas">
+        <a href="projects.html" class="btn btn-primary">查看项目</a>
+        <a href="speaking.html" class="btn btn-secondary">联系我</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 身份标签条 -->
+  <div class="identity-tags">
+    <div class="identity-tag">🏢 OPC 践行者</div>
+    <div class="identity-tag">🤖 AI Agent</div>
+    <div class="identity-tag">📚 HR Tech 15年</div>
+    <div class="identity-tag">🎤 讲师</div>
+  </div>
+
+  <!-- 精选项目 -->
+  <section class="featured-projects">
+    <div class="container">
+      <h2>精选项目</h2>
+      <div class="projects-grid" id="featuredProjects">
+        <!-- 动态加载 -->
+      </div>
+      <div class="view-all">
+        <a href="projects.html">查看全部项目 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 新闻报道 -->
+  <section class="home-news-section">
+    <div class="container">
+      <h2>新闻报道</h2>
+      <div class="home-news-card" id="homeNews">
+        <!-- 动态加载 -->
+      </div>
+      <div class="view-all-news">
+        <a href="news.html">查看全部报道 →</a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+  .home-news-section {
+    padding-bottom: var(--space-8);
+  }
+  .home-news-section h2 {
+    text-align: center;
+    margin-bottom: var(--space-4);
+  }
+  .home-news-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--elevated);
+    border: 1px solid var(--hair);
+    border-radius: var(--radius-card);
+    padding: var(--space-4);
+    box-shadow: var(--shadow-card);
+    transition: all 0.2s;
+  }
+  .home-news-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+  }
+  .home-news-source {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent-ink);
+    background: var(--accent-soft);
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: var(--space-2);
+  }
+  .home-news-card h3 {
+    font-size: 20px;
+    margin-bottom: var(--space-2);
+  }
+  .home-news-desc {
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.6;
+    margin-bottom: var(--space-2);
+  }
+  .home-news-meta {
+    font-size: 13px;
+    color: var(--muted);
+    font-family: var(--font-mono);
+  }
+  .view-all-news {
+    text-align: center;
+    margin-top: var(--space-3);
+  }
+  .view-all-news a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+    font-size: 15px;
+  }
+
+  <script>
+    // 导航菜单
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.topnav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // 加载精选项目（前3个）
+    fetch('data/projects.json')
+      .then(res => res.json())
+      .then(data => {
+        const featured = data.projects.slice(0, 3);
+        const container = document.getElementById('featuredProjects');
+
+        featured.forEach(project => {
+          const statusText = {
+            'in_progress': '进行中',
+            'live': '已上线',
+            'done': '已完成',
+            'concept': '概念阶段'
+          };
+
+          const card = document.createElement('div');
+          card.className = 'project-card';
+          card.innerHTML = `
+            <div class="project-card-header">
+              <h3>${project.name}</h3>
+              <span class="badge badge-${project.status}">${statusText[project.status]}</span>
+            </div>
+            <div class="project-card-summary">${project.summary}</div>
+            <div class="project-card-tags">
+              ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      });
+
+      // 加载新闻报道
+      fetch('data/news.json')
+        .then(res => res.json())
+        .then(data => {
+          const newsContainer = document.getElementById('homeNews');
+          if (!newsContainer || !data.news.length) return;
+          const item = data.news[0];
+          newsContainer.innerHTML = `
+            <div class="home-news-source">${item.source}</div>
+            <h3>${item.title}</h3>
+            <div class="home-news-meta">${item.date} · ${item.author}</div>
+            <div class="home-news-desc">${item.summary}</div>
+          `;
+        });
+  </script>
+</body>
+</html>

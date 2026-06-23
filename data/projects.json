@@ -1,0 +1,55 @@
+{
+  "version": 2,
+  "projects": [
+    {
+      "id": "wechat-archiver",
+      "name": "微信群聊归档助手",
+      "status": "live",
+      "summary": "一键导出微信聊天记录到本地 Markdown + 飞书云文档，零技术门槛",
+      "tags": ["微信", "归档", "飞书", "桌面应用"],
+      "url": null,
+      "detail": null,
+      "description": "让非技术人员也能一键导出微信聊天记录。从微信进程内存提取 SQLCipher 密钥 → 解密数据库 → 导出 Markdown → 可选同步飞书。支持实时监听（30ms WAL 轮询）、多种图片格式自动解密（XOR/V1/V2）、桌面化暗色主题 UI（pywebview）。零依赖，单文件 EXE（~20MB），双击即用。"
+    },
+    {
+      "id": "hr-ai-agent",
+      "name": "问查办一体化 HR AI Agent",
+      "status": "live",
+      "summary": "4 周 MVP 验证 OPC 模式，问+查两层，飞书接入",
+      "tags": ["HR Tech", "AI Agent", "RAG", "MCP Gateway", "OPC"],
+      "url": null,
+      "detail": null,
+      "description": "HR Tech 领域「问查办一体化」AI Agent 平台，验证 OPC（1 人 + AI Agent 团队）模式可行性。MVP 只做「问」（RAG 问答 + 知识治理 Harness）+「查」（MCP Gateway 对接系统）。技术栈：OpenClaw 多 Agent 平台 + Qdrant + BGE-base-zh + BGE-Reranker + GLM-4-Flash + FastAPI MCP Gateway。验收：10 题准确率 ≥ 80%，意图分类 ≥ 90%。"
+    },
+    {
+      "id": "knowledge-governance",
+      "name": "知识治理系统",
+      "status": "in_progress",
+      "summary": "知识原子元模型 + 10 层 Harness 架构，病假工资场景已跑通最小闭环",
+      "tags": ["知识治理", "RAG", "Harness", "HR Tech"],
+      "url": null,
+      "detail": null,
+      "description": "基于何明璐元模型方法论 + 雷神自创 10 层 Harness 架构。核心三层：原子要素（LAW/CAL/PRO/CAS 等 7 类，必须可追溯来源）、组合块（病假工资/三期保护/加班费等高频场景模板）、框架层 + 7 条硬约束。病假工资场景 3 法规 + 2 公式 + 2 案例 → BLOCK-SICKPAY-01 已跑通，正在向假期、入离职等高频知识铺开。"
+    },
+    {
+      "id": "data-governance",
+      "name": "数据治理 Agent OS",
+      "status": "in_progress",
+      "summary": "15 对象统一治理模型，Oracle/PeopleSoft 巡检 MVP，M1→M2 阶段",
+      "tags": ["数据治理", "Oracle", "PeopleSoft", "SQL Guard"],
+      "url": null,
+      "detail": null,
+      "description": "针对 HR 系统结构化数据的治理平台。核心设计：15 对象统一治理模型（元数据成熟度 L0–L4）、SQL Guard（SELECT only + 表白名单 + DBMS/UTL 黑名单）、EMPLID 默认 sha256 hash。已确认两条原则：① 数据治理规则本身要被元治理治理；② 数据治理本身要 Agent 化（元数据采集/规则推荐/问题分诊/血缘推断/治理审核）。"
+    },
+    {
+      "id": "ai-native-governance-stack",
+      "name": "AI 原生组织五层治理栈",
+      "status": "concept",
+      "summary": "知识→数据→Agent→元→组织，五层递进的治理框架",
+      "tags": ["理论框架", "AI治理", "组织设计"],
+      "url": null,
+      "detail": null,
+      "description": "五层递进治理体系：第 1 层知识治理（知识原子元模型），第 2 层数据治理（Oracle/PeopleSoft 规则引擎），第 3 层 Agent 治理，第 4 层元治理（治理规则本身被治理），第 5 层组织治理。每一层产出是上一层输入约束，解决 AI 进企业后知识飘、数据脏、Agent 不可信、规则没人管、组织跟不上的系统性问题。"
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新闻报道 - 雷神</title>
+  <meta name="description" content="雷神相关新闻报道">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Noto+Serif+SC:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/vars.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <style>
+    .page-header {
+      padding-top: var(--space-8);
+      padding-bottom: var(--space-6);
+      text-align: center;
+    }
+
+    .page-header p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .news-section {
+      padding-bottom: var(--space-12);
+    }
+
+    .news-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .news-card {
+      background: var(--elevated);
+      border: 1px solid var(--hair);
+      border-radius: var(--radius-card);
+      padding: var(--space-4);
+      box-shadow: var(--shadow-card);
+      transition: all 0.2s;
+      margin-bottom: var(--space-4);
+    }
+
+    .news-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .news-source {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-ink);
+      background: var(--accent-soft);
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: var(--space-2);
+    }
+
+    .news-card h2 {
+      font-size: 22px;
+      margin-bottom: var(--space-2);
+      line-height: 1.3;
+    }
+
+    .news-meta {
+      font-size: 13px;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      margin-bottom: var(--space-3);
+    }
+
+    .news-summary {
+      font-size: 15px;
+      color: var(--ink-2);
+      line-height: 1.7;
+      margin-bottom: var(--space-3);
+    }
+
+    .news-content {
+      font-size: 15px;
+      color: var(--ink-2);
+      line-height: 1.8;
+      padding-top: var(--space-3);
+      border-top: 1px solid var(--hair);
+      margin-bottom: var(--space-3);
+    }
+
+    .news-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent-ink);
+    }
+
+    .news-link:hover {
+      color: var(--accent);
+    }
+
+    /* 首页小部件 */
+    .home-news-section {
+      padding-bottom: var(--space-8);
+    }
+
+    .home-news-section h2 {
+      text-align: center;
+      margin-bottom: var(--space-4);
+    }
+
+    .home-news-card {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--elevated);
+      border: 1px solid var(--hair);
+      border-radius: var(--radius-card);
+      padding: var(--space-4);
+      box-shadow: var(--shadow-card);
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .home-news-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .home-news-card .news-source {
+      margin-bottom: var(--space-2);
+    }
+
+    .home-news-card h3 {
+      font-size: 20px;
+      margin-bottom: var(--space-2);
+    }
+
+    .home-news-card .news-summary {
+      font-size: 14px;
+      margin-bottom: var(--space-2);
+    }
+
+    .home-news-card .news-meta {
+      margin-bottom: var(--space-2);
+    }
+
+    .view-all-news {
+      text-align: center;
+      margin-top: var(--space-3);
+    }
+
+    .view-all-news a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .news-card h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="index.html" class="topnav-brand">雷神</a>
+      <div class="topnav-links">
+        <a href="index.html">首页</a>
+        <a href="about.html">关于</a>
+        <a href="projects.html">AI项目</a>
+        <a href="portfolio.html">作品集</a>
+        <a href="blog/index.html">博客</a>
+        <a href="news.html" class="active">报道</a>
+        <a href="speaking.html">讲课</a>
+      </div>
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 页面头部 -->
+  <div class="page-header">
+    <div class="container">
+      <h1>新闻报道</h1>
+      <p>媒体报道与行业关注</p>
+    </div>
+  </div>
+
+  <!-- 报道列表 -->
+  <section class="news-section">
+    <div class="container">
+      <div class="news-list" id="newsList">
+        <!-- 动态加载 -->
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // 导航菜单
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.topnav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // 加载报道
+    fetch('data/news.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('newsList');
+
+        data.news.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'news-card';
+          card.innerHTML = `
+            <div class="news-source">${item.source}</div>
+            <h2>${item.title}</h2>
+            <div class="news-meta">${item.date} · ${item.author}</div>
+            <div class="news-summary">${item.summary}</div>
+            <div class="news-content">${item.content}</div>
+            <a href="${item.url}" target="_blank" rel="noopener" class="news-link">阅读原文 ↗</a>
+          `;
+          container.appendChild(card);
+        });
+      });
+  </script>
+</body>
+</html>
