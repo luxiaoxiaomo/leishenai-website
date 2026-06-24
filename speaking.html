@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>课程 & 联系 - 雷神</title>
   <meta name="description" content="雷神的课程与联系方式">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="课程 & 联系 - 雷神">
+  <meta property="og:description" content="AI × HR 交叉课程：AI 原生组织落地、AI Agent 实战、HR AI 融合。西湖区青年夜校授课教师。">
+  <meta property="og:image" content="https://leishenai.cc/assets/img/头像.jpg">
+  <meta property="og:url" content="https://leishenai.cc/speaking.html">
+  <meta property="og:locale" content="zh_CN">
+  <link rel="icon" type="image/jpeg" href="assets/img/头像.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Noto+Serif+SC:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -127,6 +135,72 @@
       text-align: center;
     }
 
+    /* 授课经历 */
+    .speaking-history {
+      padding-bottom: var(--space-8);
+    }
+
+    .speaking-history h2 {
+      margin-bottom: var(--space-4);
+    }
+
+    .speaking-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .speaking-item {
+      display: block;
+      background: var(--elevated);
+      border: 1px solid var(--hair);
+      border-radius: 6px;
+      padding: 20px 24px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s;
+    }
+
+    .speaking-item:hover {
+      border-color: var(--accent);
+    }
+
+    .speaking-item-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .speaking-date {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .speaking-org {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent-ink);
+      background: var(--accent-soft);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .speaking-item h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #0969da;
+    }
+
+    .speaking-item p {
+      font-size: 14px;
+      color: var(--ink-2);
+      line-height: 1.6;
+      margin: 0;
+    }
+
     .contact-section h2 {
       margin-bottom: var(--space-2);
     }
@@ -215,6 +289,23 @@
           <h3>HR AI 龙虾实战营</h3>
           <p>两天实操课程，从 RAG 搭建到多 Agent 协同闭环</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 授课经历 -->
+  <section class="speaking-history">
+    <div class="container">
+      <h2>授课经历</h2>
+      <div class="speaking-list">
+        <a href="https://mp.weixin.qq.com/s/QysRASWcq7QrmiPkLpPJVA" target="_blank" class="speaking-item">
+          <div class="speaking-item-meta">
+            <span class="speaking-date">2026.04</span>
+            <span class="speaking-org">西湖区青年夜校</span>
+          </div>
+          <h3>人工智能专题班 · 授课教师</h3>
+          <p>西湖团区委与浙江开放大学联合打造，面向 18-40 岁青年的 AI 通识课程。10 次课，完成可获浙江省终身教育学分银行微证书。</p>
+        </a>
       </div>
     </div>
   </section>

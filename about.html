@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>关于 - 雷神</title>
   <meta name="description" content="雷神的个人简介：从 HR Tech 到 AI Agent 实践者">
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="关于雷神 - 从 HR Tech 到 AI Agent 实践者">
+  <meta property="og:description" content="在 HR Tech 领域深耕 15 年后 All in AI，践行 OPC 模式，带 AI Agent 团队落地知识治理、数据治理等项目。">
+  <meta property="og:image" content="https://leishenai.cc/assets/img/头像.jpg">
+  <meta property="og:url" content="https://leishenai.cc/about.html">
+  <meta property="og:locale" content="zh_CN">
+  <link rel="icon" type="image/jpeg" href="assets/img/头像.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Noto+Serif+SC:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -116,6 +124,121 @@
       padding-bottom: var(--space-12);
     }
 
+    /* 五大能力 */
+    .capabilities-section {
+      padding-bottom: var(--space-8);
+    }
+
+    .capabilities-section h2 {
+      margin-bottom: var(--space-1);
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: var(--space-4);
+    }
+
+    .capabilities-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .capabilities-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .capability-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--hair);
+    }
+
+    .capability-item:last-child {
+      border-bottom: none;
+    }
+
+    .capability-card {
+      background: var(--elevated);
+      border: 1px solid var(--hair);
+      border-radius: 6px;
+      padding: 16px;
+      transition: border-color 0.15s;
+    }
+
+    .capability-card:hover {
+      border-color: var(--accent);
+    }
+
+    .capability-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent-soft, #e8f0fe);
+      color: var(--accent-ink, #0969da);
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .capability-body h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .capability-body p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .capability-card h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .capability-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* 专家认证 */
+    .credentials-section {
+      padding-bottom: var(--space-8);
+    }
+
+    .credentials-section h2 {
+      margin-bottom: var(--space-4);
+    }
+
+    .credentials-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 10px;
+    }
+
+    .credential-item {
+      font-size: 15px;
+      color: var(--ink-2);
+      padding: 12px 16px;
+      background: var(--elevated);
+      border: 1px solid var(--hair);
+      border-radius: 6px;
+    }
+
     .skills-section h2 {
       margin-bottom: var(--space-4);
     }
@@ -199,11 +322,10 @@
       <div class="intro-grid">
         <img src="assets/img/头像.jpg" alt="雷神" class="intro-avatar">
         <div class="intro-content">
-          <h2 class="serif">从 HR Tech 到 AI，不是转行，是升维</h2>
-          <p>我是雷神，在 HR Tech 领域深耕 15 年后，开始用 AI 重新定义组织与人的连接方式。</p>
-          <p>不是抛弃 HR Tech 经验去追 AI 热点，而是发现：懂 HR 系统、懂组织流程、懂业务场景的人，恰恰最有机会把 AI 真正落地进企业。技术能学，但对 HR Tech 痛点的理解和对场景的洞察，是 15 年才能积累的壁垒。</p>
-          <p>现在践行 OPC（One Person Company）模式：我负责判断和决策，AI Agent 团队负责执行。从知识治理到数据治理，从 HR AI Agent 到企业 AI 成熟度评测，每个项目都是"AI × HR"交叉领域的实验场。</p>
-          <p>我相信，AI 原生组织不是科幻，而是可以用五层治理体系一步步搭建起来的现实。</p>
+          <h2 class="serif">HR + AI 落地实战派</h2>
+          <p>我是雷神，15 年 HR 数字化沉淀 + AI 原生实践者。不只讲 AI，帮你把 AI 真正用进 HR 业务里。</p>
+          <p>先后任职于 IBM、普华永道、德勤等国际咨询公司及得物等互联网企业，兼具甲方与乙方视角。15 年 HR 数字化是底子，AI 是新武器 —— 两手都硬，才能真正落地。</p>
+          <p>现在践行 OPC 模式：我负责判断和决策，AI Agent 团队负责执行。从知识治理到数据治理，从 HR AI Agent 到 AI 实战工作坊，每个项目都是"AI × HR"交叉领域的实验场。</p>
         </div>
       </div>
     </div>
@@ -238,6 +360,66 @@
     </div>
   </section>
 
+  <!-- 五大交付能力 -->
+  <section class="capabilities-section">
+    <div class="container">
+      <h2>五大交付能力</h2>
+      <p class="section-subtitle">助力 HR 数字化与 AI 落地</p>
+      <div class="capabilities-list">
+        <div class="capability-item">
+          <div class="capability-num">1</div>
+          <div class="capability-body">
+            <h3>传统 HR 数字化</h3>
+            <p>人力资源数字化转型、HR 系统选型、PeopleSoft 升级与运维</p>
+          </div>
+        </div>
+        <div class="capability-item">
+          <div class="capability-num">2</div>
+          <div class="capability-body">
+            <h3>AI 知识库落地</h3>
+            <p>文档拆解、知识原子化、RAG 到 AI 问答全流程，让组织经验活起来</p>
+          </div>
+        </div>
+        <div class="capability-item">
+          <div class="capability-num">3</div>
+          <div class="capability-body">
+            <h3>AI 招聘全链路</h3>
+            <p>从简历解析到面试辅助，AI 赋能招聘全流程，从底层逻辑入手把控</p>
+          </div>
+        </div>
+        <div class="capability-item">
+          <div class="capability-num">4</div>
+          <div class="capability-body">
+            <h3>AI 企业问诊一体化</h3>
+            <p>基于 Agent 架构，从"知道"到"做到"的闭环落地</p>
+          </div>
+        </div>
+        <div class="capability-item">
+          <div class="capability-num">5</div>
+          <div class="capability-body">
+            <h3>AI 实战工作坊</h3>
+            <p>不只输出方法论，带你实操跑通全流程</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 专家认证 -->
+  <section class="credentials-section">
+    <div class="container">
+      <h2>媒体与专家认证</h2>
+      <div class="credentials-list">
+        <div class="credential-item">🏫 浙江大学校外特聘讲师</div>
+        <div class="credential-item">📰 中国新闻网专题报道</div>
+        <div class="credential-item">🔬 中国人力资源开发研究会智能化专委会</div>
+        <div class="credential-item">📋 浙江开放大学专家库成员</div>
+        <div class="credential-item">🏢 OPC 落地践行者</div>
+        <div class="credential-item">🤝 HR 智能研究院研究合伙人</div>
+      </div>
+    </div>
+  </section>
+
   <!-- 技能/领域 -->
   <section class="skills-section">
     <div class="container">
@@ -266,6 +448,43 @@
       hamburger.classList.toggle('active');
       navLinks.classList.toggle('active');
     });
+  </script>
+
+  <!-- JSON-LD: Person detail for GEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "雷神",
+    "alternateName": "王明雷",
+    "url": "https://leishenai.cc",
+    "image": "https://leishenai.cc/assets/img/头像.jpg",
+    "jobTitle": "OPC 践行者 · AI Agent 实践者",
+    "description": "15 年 HR Tech 背景（IBM、普华永道、德勤、得物），2026 年 All in AI，践行 OPC 模式带 AI Agent 团队落地知识治理、数据治理等项目。运营公众号发表原创文章近 300 篇。",
+    "knowsAbout": ["AI Agent", "HR Tech", "PeopleSoft", "知识治理", "数据治理", "OPC", "RAG", "MCP", "组织设计", "AI 原生组织"],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "AI 独立践行者",
+      "occupationLocation": {
+        "@type": "City",
+        "name": "杭州"
+      }
+    },
+    "alumniOf": [
+      {"@type": "Organization", "name": "IBM"},
+      {"@type": "Organization", "name": "普华永道"},
+      {"@type": "Organization", "name": "德勤"},
+      {"@type": "Organization", "name": "得物"}
+    ],
+    "teaches": {
+      "@type": "Course",
+      "name": "西湖区青年夜校 AI 专题班",
+      "provider": {
+        "@type": "Organization",
+        "name": "西湖团区委 & 浙江开放大学"
+      }
+    }
+  }
   </script>
 </body>
 </html>

@@ -4,8 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>雷神 - OPC 践行者 · AI Agent 实践者</title>
-  <meta name="description" content="OPC 践行者，15 年 HR Tech 背景，带 AI Agent 团队落地 AI 原生企业">
+  <meta name="description" content="雷神AI：HR+AI落地实战派。15年HR数字化沉淀+AI原生实践者，OPC落地践行者、高校讲师、AI研究合伙人。">
   <meta name="theme-color" content="#FAF8F2">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="雷神AI - HR+AI落地实战派">
+  <meta property="og:description" content="15年HR数字化沉淀+AI原生实践者。OPC落地践行者、浙江大学校外特聘讲师、AI研究合伙人。不只讲AI，帮你把AI真正用进HR业务里。">
+  <meta property="og:image" content="https://leishenai.cc/assets/img/头像.jpg">
+  <meta property="og:url" content="https://leishenai.cc/">
+  <meta property="og:locale" content="zh_CN">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="雷神 - OPC 践行者 · AI Agent 实践者">
+  <meta name="twitter:description" content="15 年 HR Tech 背景，All in AI。用五层治理框架构建 AI 原生组织。">
+  <meta name="twitter:image" content="https://leishenai.cc/assets/img/头像.jpg">
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/img/头像.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Noto+Serif+SC:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -220,8 +234,8 @@
     <div class="container hero-content">
       <img src="assets/img/头像.jpg" alt="雷神" class="avatar hero-avatar">
       <h1>雷神</h1>
-      <div class="hero-subtitle">OPC 践行者 · AI Agent 实践者 · HR Tech 出身</div>
-      <div class="hero-slogan">"用 15 年组织经验，落地 AI 原生企业"</div>
+      <div class="hero-subtitle">HR + AI 落地实战派 · 15 年 HR 数字化沉淀 + AI 原生实践者</div>
+      <div class="hero-slogan">"不只讲 AI，帮你把 AI 真正用进 HR 业务里"</div>
       <div class="hero-ctas">
         <a href="projects.html" class="btn btn-primary">查看项目</a>
         <a href="speaking.html" class="btn btn-secondary">联系我</a>
@@ -231,10 +245,10 @@
 
   <!-- 身份标签条 -->
   <div class="identity-tags">
-    <div class="identity-tag">🏢 OPC 践行者</div>
-    <div class="identity-tag">🤖 AI Agent</div>
-    <div class="identity-tag">📚 HR Tech 15年</div>
-    <div class="identity-tag">🎤 讲师</div>
+    <div class="identity-tag">🏢 OPC 落地践行者</div>
+    <div class="identity-tag">🎓 高校讲师</div>
+    <div class="identity-tag">🔬 AI 研究合伙人</div>
+    <div class="identity-tag">📚 HR 数字化 15 年</div>
   </div>
 
   <!-- 精选项目 -->
@@ -323,6 +337,7 @@
     font-weight: 500;
     font-size: 15px;
   }
+  </style>
 
   <script>
     // 导航菜单
@@ -379,6 +394,42 @@
             <div class="home-news-desc">${item.summary}</div>
           `;
         });
+  </script>
+
+  <!-- JSON-LD: Person + GEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "雷神",
+    "alternateName": "王明雷",
+    "url": "https://leishenai.cc",
+    "image": "https://leishenai.cc/assets/img/头像.jpg",
+    "jobTitle": "HR+AI落地实战派",
+    "description": "15年HR数字化沉淀+AI原生实践者。OPC落地践行者、浙江大学校外特聘讲师、AI研究合伙人。先后任职于IBM、普华永道、德勤、得物，兼具甲乙方视角。",
+    "knowsAbout": ["AI Agent", "HR Tech", "PeopleSoft", "知识治理", "数据治理", "OPC", "RAG", "AI招聘", "AI知识库", "组织设计"],
+    "affiliation": [
+      {"@type": "Organization", "name": "中国人力资源开发研究会智能化专委会"},
+      {"@type": "Organization", "name": "HR智能研究院"}
+    ],
+    "alumniOf": [
+      {"@type": "Organization", "name": "IBM"},
+      {"@type": "Organization", "name": "普华永道"},
+      {"@type": "Organization", "name": "德勤"},
+      {"@type": "Organization", "name": "得物"}
+    ],
+    "hasCredential": [
+      {"@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "description": "浙江大学校外特聘讲师"},
+      {"@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "description": "浙江开放大学专家库成员"},
+      {"@type": "EducationalOccupationalCredential", "credentialCategory": "experience", "description": "15年人力资源数字化实施经验"}
+    ],
+    "sameAs": [],
+    "mainEntityOfPage": {
+      "@type": "WebSite",
+      "name": "雷神AI",
+      "url": "https://leishenai.cc"
+    }
+  }
   </script>
 </body>
 </html>
