@@ -2,12 +2,20 @@
   "version": 1,
   "posts": [
     {
-      "id": "example-post",
-      "title": "示例文章：AI 原生组织的思考",
-      "date": "2025-06-01",
-      "tags": ["AI治理", "组织设计"],
-      "summary": "这是一篇示例文章，演示博客系统的基本功能。实际内容将在后续添加。",
-      "file": "posts/example-post.html"
+      "id": "one-person-5-agents-knowledge-base",
+      "title": "一个人带5个AI Agent，两天搭出企业知识库MVP",
+      "date": "2026-04-28",
+      "tags": ["AI Agent", "知识库", "OPC", "实战"],
+      "summary": "一个人+5个AI Agent（大管家、小开、小P、老架、小项），从零开始两天搭出能用的企业知识库。6000+条知识入库，RAG检索跑通，前端产品化，还经历了一次误删全部代码的事故恢复。",
+      "url": "https://mp.weixin.qq.com/s/9CRNFD1Ium3Q5qo10JWcbg"
+    },
+    {
+      "id": "opcs-personal-website-with-ai",
+      "title": "OPC 实践：用 AI 搭建个人网站全记录",
+      "date": "2026-06-22",
+      "tags": ["OPC", "AI实践", "建站"],
+      "summary": "从零开始，用 AI Agent 协助完成个人网站的设计、开发和部署全过程。",
+      "file": "posts/opcs-personal-website-with-ai.md"
     }
   ]
 }

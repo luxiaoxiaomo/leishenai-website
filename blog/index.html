@@ -207,50 +207,51 @@
       navLinks.classList.toggle('active');
     });
 
-    // 加载博客列表（当有文章时）
-    // fetch('../data/posts.json')
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     if (data.posts.length === 0) return;
-    //
-    //     const container = document.getElementById('blogList');
-    //     container.innerHTML = ''; // 清空占位
-    //
-    //     // 按月份分组
-    //     const byMonth = {};
-    //     data.posts.forEach(post => {
-    //       const month = post.date.substring(0, 7);
-    //       if (!byMonth[month]) byMonth[month] = [];
-    //       byMonth[month].push(post);
-    //     });
-    //
-    //     Object.keys(byMonth).sort().reverse().forEach(month => {
-    //       const group = document.createElement('div');
-    //       group.className = 'month-group';
-    //       group.innerHTML = `<div class="month-header">${month}</div>`;
-    //
-    //       byMonth[month].forEach(post => {
-    //         const item = document.createElement('div');
-    //         item.className = 'post-item';
-    //         item.innerHTML = `
-    //           <div class="post-header">
-    //             <h3>${post.title}</h3>
-    //             <div class="post-date">${post.date}</div>
-    //           </div>
-    //           <div class="post-summary">${post.summary}</div>
-    //           <div class="post-footer">
-    //             <div class="post-tags">
-    //               ${post.tags.map(tag => `<span class="post-tag">${tag}</span>`).join('')}
-    //             </div>
-    //             <a href="${post.file}" class="post-link">阅读全文 →</a>
-    //           </div>
-    //         `;
-    //         group.appendChild(item);
-    //       });
-    //
-    //       container.appendChild(group);
-    //     });
-    //   });
+    // 加载博客列表
+    fetch('../data/posts.json')
+      .then(res => res.json())
+      .then(data => {
+        if (data.posts.length === 0) return;
+
+        const container = document.getElementById('blogList');
+        container.innerHTML = '';
+
+        const byMonth = {};
+        data.posts.forEach(post => {
+          const month = post.date.substring(0, 7);
+          if (!byMonth[month]) byMonth[month] = [];
+          byMonth[month].push(post);
+        });
+
+        Object.keys(byMonth).sort().reverse().forEach(month => {
+          const group = document.createElement('div');
+          group.className = 'month-group';
+          group.innerHTML = `<div class="month-header">${month}</div>`;
+
+          byMonth[month].forEach(post => {
+            const link = post.url || post.file;
+            const target = post.url ? ' target="_blank"' : '';
+            const item = document.createElement('div');
+            item.className = 'post-item';
+            item.innerHTML = `
+              <div class="post-header">
+                <h3>${post.title}</h3>
+                <div class="post-date">${post.date}</div>
+              </div>
+              <div class="post-summary">${post.summary}</div>
+              <div class="post-footer">
+                <div class="post-tags">
+                  ${post.tags.map(tag => `<span class="post-tag">${tag}</span>`).join('')}
+                </div>
+                <a href="${link}"${target} class="post-link">阅读全文 →</a>
+              </div>
+            `;
+            group.appendChild(item);
+          });
+
+          container.appendChild(group);
+        });
+      });
   </script>
 </body>
 </html>
