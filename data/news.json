@@ -2,6 +2,16 @@
   "version": 1,
   "news": [
     {
+      "id": "hr-monitor-2026-report",
+      "title": "HR Monitor 2026：AI 时代的人力资源转型报告",
+      "source": "McKinsey 报告",
+      "date": "2026-06-01",
+      "author": "People & Organizational Performance Practice",
+      "url": "报告/hr-monitor-2026-a-turning-point-for-the-people-function_final.pdf",
+      "summary": "一份覆盖欧洲、美国与中国的 HR 趋势基准调研，聚焦人才获取、员工发展、AI 协作、员工体验与 HR 运营模式重构。",
+      "content": "报告指出 HR 正处于从职能卓越走向系统级转型的关键节点。对我们的人力资源 AI 实践而言，这份资料适合作为理解组织能力、人才策略和 AI 赋能路径的外部参照。"
+    },
+    {
       "id": "chinanews-opc-20260531",
       "title": "AI技术赋能 浙江杭州“OPC”创业悄然兴起",
       "source": "中国新闻网",

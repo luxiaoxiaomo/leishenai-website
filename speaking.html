@@ -9,8 +9,8 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="课程 & 联系 - 雷神">
   <meta property="og:description" content="AI × HR 交叉课程：AI 原生组织落地、AI Agent 实战、HR AI 融合。西湖区青年夜校授课教师。">
-  <meta property="og:image" content="https://leishenai.cc/assets/img/头像.jpg">
-  <meta property="og:url" content="https://leishenai.cc/speaking.html">
+  <meta property="og:image" content="https://leishenai.ccwu.cc/assets/img/头像.jpg">
+  <meta property="og:url" content="https://leishenai.ccwu.cc/speaking.html">
   <meta property="og:locale" content="zh_CN">
   <link rel="icon" type="image/jpeg" href="assets/img/头像.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -212,8 +212,68 @@
 
     /* 弹窗样式已在 base.css 定义 */
 
+
+    .featured-course {
+      padding-bottom: var(--space-6);
+    }
+
+    .featured-course-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) auto;
+      gap: var(--space-4);
+      align-items: center;
+      background: linear-gradient(135deg, var(--accent-soft), var(--elevated));
+      border: 1px solid rgba(210,112,80,0.28);
+      border-radius: var(--radius-card);
+      padding: var(--space-4);
+      text-decoration: none;
+      color: inherit;
+      box-shadow: var(--shadow-card);
+      transition: all 0.2s ease;
+    }
+
+    .featured-course-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent);
+    }
+
+    .featured-course-kicker {
+      display: inline-flex;
+      margin-bottom: var(--space-2);
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .featured-course-card h2 {
+      font-size: 26px;
+      margin-bottom: var(--space-1);
+    }
+
+    .featured-course-card p {
+      color: var(--ink-2);
+      margin: 0;
+      max-width: 680px;
+    }
+
+    .featured-course-link {
+      white-space: nowrap;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent-ink);
+    }
+
     @media (max-width: 768px) {
       .wechat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-course-card {
         grid-template-columns: 1fr;
       }
 
@@ -260,6 +320,19 @@
   </div>
 
   <!-- 课程列表 -->
+  <section class="featured-course">
+    <div class="container">
+      <a class="featured-course-card" href="浙江大学/final/人工智能赋能超级个体成长-课程详案.html">
+        <div>
+          <div class="featured-course-kicker">精选课程详案</div>
+          <h2>人工智能赋能超级个体成长</h2>
+          <p>面向 HR 高管与管理者的 AI 工作系统重构课：从三层影响模型、OPC 方法论，到 HR AI 场景和 30 天行动计划。</p>
+        </div>
+        <div class="featured-course-link">查看网页版课程详案 →</div>
+      </a>
+    </div>
+  </section>
+
   <section class="topics-section">
     <div class="container">
       <h2>课程</h2>
